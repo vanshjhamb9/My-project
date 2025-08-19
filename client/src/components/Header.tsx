@@ -4,9 +4,9 @@ import { useScroll } from "@/hooks/use-scroll";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Offerings" },
   { href: "#portfolio", label: "Portfolio" },
-  { href: "#team", label: "Team" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -38,7 +38,7 @@ export default function Header() {
               className="text-2xl font-bold text-gradient"
               whileHover={{ scale: 1.05 }}
             >
-              KodyTechnoLab
+              Neural Coder AI
             </motion.div>
             
             {/* Desktop Menu */}

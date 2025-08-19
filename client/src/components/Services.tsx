@@ -1,161 +1,231 @@
 import { motion } from "framer-motion";
 import { 
-  FaCogs, 
+  FaMobile, 
   FaBrain, 
   FaDatabase, 
-  FaUsers, 
+  FaRobot, 
   FaWifi, 
-  FaSyncAlt, 
-  FaHandshake, 
-  FaTools 
+  FaEye, 
+  FaLink, 
+  FaCubes,
+  FaGamepad,
+  FaShoppingCart,
+  FaHome,
+  FaGraduationCap,
+  FaHeart,
+  FaSeedling
 } from "react-icons/fa";
 
 const services = [
   {
     id: 1,
-    title: "Robotics Development",
-    description: "Cutting-edge robotic solutions that transform industries with intelligent automation and precision engineering.",
-    icon: FaCogs,
+    title: "AI-Powered Mobile App Development",
+    description: "Personalized, scalable, and intelligent apps built for impact with cutting-edge AI integration.",
+    icon: FaMobile,
     special: true,
     colSpan: "lg:col-span-2"
   },
   {
     id: 2,
-    title: "AI/ML Development",
-    description: "Intelligent systems powered by machine learning algorithms.",
-    icon: FaBrain,
-    special: false,
-    colSpan: ""
-  },
-  {
-    id: 3,
-    title: "Data Science",
-    description: "Transform raw data into actionable business insights.",
+    title: "Custom CRM and Web Application Solutions",
+    description: "Tailored business solutions that streamline operations and enhance productivity.",
     icon: FaDatabase,
     special: false,
     colSpan: ""
   },
   {
-    id: 4,
-    title: "Hire Resources",
-    description: "Skilled professionals for your technology needs.",
-    icon: FaUsers,
+    id: 3,
+    title: "AI Integration for Automation & Insights",
+    description: "Intelligent systems that automate processes and provide actionable business intelligence.",
+    icon: FaBrain,
     special: false,
     colSpan: ""
   },
   {
-    id: 5,
-    title: "IoT Solutions",
-    description: "Connected devices for smart environments.",
+    id: 4,
+    title: "IoT Solutions for Connected Enterprises",
+    description: "Smart IoT ecosystems that connect devices and transform business operations.",
     icon: FaWifi,
     special: false,
     colSpan: ""
   },
   {
+    id: 5,
+    title: "Machine Learning & Predictive Analytics",
+    description: "Data-driven insights and predictions to optimize decision-making processes.",
+    icon: FaCubes,
+    special: false,
+    colSpan: ""
+  },
+  {
     id: 6,
-    title: "Legacy Migration",
-    description: "Modernize your existing systems seamlessly.",
-    icon: FaSyncAlt,
+    title: "Computer Vision Implementation",
+    description: "Advanced visual recognition and processing capabilities for various applications.",
+    icon: FaEye,
     special: false,
     colSpan: ""
   },
   {
     id: 7,
-    title: "IT Consulting",
-    description: "Strategic technology guidance for growth.",
-    icon: FaHandshake,
+    title: "Robotics Automation",
+    description: "Intelligent robotic solutions that enhance efficiency and precision in operations.",
+    icon: FaRobot,
     special: false,
     colSpan: ""
   },
   {
     id: 8,
-    title: "Support & Maintenance",
-    description: "Ongoing support for optimal performance.",
-    icon: FaTools,
+    title: "Blockchain for Secure Transactions",
+    description: "Decentralized solutions ensuring security, transparency, and trust in digital transactions.",
+    icon: FaLink,
     special: false,
     colSpan: ""
   }
+];
+
+const industries = [
+  { name: "eCommerce", icon: FaShoppingCart, color: "text-blue-400" },
+  { name: "Real Estate", icon: FaHome, color: "text-green-400" },
+  { name: "Retail", icon: FaShoppingCart, color: "text-purple-400" },
+  { name: "EdTech", icon: FaGraduationCap, color: "text-yellow-400" },
+  { name: "Healthcare", icon: FaHeart, color: "text-red-400" },
+  { name: "Gaming", icon: FaGamepad, color: "text-cyan-400" },
+  { name: "Agriculture", icon: FaSeedling, color: "text-green-500" },
+  { name: "Supply Chain", icon: FaCubes, color: "text-orange-400" }
 ];
 
 export default function Services() {
   return (
     <section id="services" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <motion.div
+        {/* Header */}
+        <motion.div 
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Our <span className="text-gradient">Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Our <span className="text-gradient gold-accent">Offerings</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We help you achieve your business objectives with the right technology, strategy and people.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Neural Coder AI provides tailored AI and tech solutions that go beyond the ordinary. 
+            Our services unlock new levels of efficiency, insight, and scale for your business.
           </p>
         </motion.div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              className={`glassmorphism-strong p-8 rounded-2xl hover-lift group ${service.colSpan} ${
+                service.special ? "lg:row-span-1" : ""
+              }`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              data-testid={`card-service-${service.id}`}
+            >
               <motion.div
-                key={service.id}
-                className={`glassmorphism p-6 service-card hover:border-primary transition-all duration-500 ${
-                  service.special ? "robotics-special lg:col-span-2" : ""
-                } ${service.special ? "hover-glow" : ""}`}
-                initial={{ opacity: 0, y: 30 }}
+                className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 ${
+                  service.special 
+                    ? "bg-primary/20 border-2 border-primary" 
+                    : "glassmorphism"
+                }`}
+                whileHover={{ rotate: 10 }}
+              >
+                <service.icon className={`text-2xl ${
+                  service.special ? "text-primary" : "text-primary"
+                }`} />
+              </motion.div>
+              <h3 className={`text-xl font-bold mb-4 ${
+                service.special ? "text-primary" : "text-foreground"
+              }`}>
+                {service.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {service.description}
+              </p>
+              {service.special && (
+                <motion.button 
+                  className="mt-6 px-6 py-2 bg-primary text-black rounded-full font-semibold hover:bg-primary/80 transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  data-testid="button-book-demo"
+                >
+                  Book a Demo
+                </motion.button>
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Industries Served */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-3xl font-bold text-center mb-12">
+            Industries <span className="text-gradient gold-accent">We Serve</span>
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.name}
+                className="glassmorphism p-6 rounded-xl text-center hover-lift group"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                  scale: service.special ? 1.02 : 1.05,
-                  y: -10 
-                }}
+                whileHover={{ scale: 1.05 }}
+                data-testid={`card-industry-${industry.name.toLowerCase().replace(' ', '-')}`}
               >
-                <div className={`${
-                  service.special ? 'h-40' : 'h-32'
-                } bg-gradient-to-br from-primary/30 to-violet-light/30 rounded-2xl mb-6 relative overflow-hidden`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.2 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <Icon className={`${
-                        service.special ? 'text-6xl' : 'text-4xl'
-                      } text-primary`} />
-                    </motion.div>
-                  </div>
-                  <div className={`absolute ${
-                    service.special ? 'top-4 left-4 text-lg' : 'top-3 left-3'
-                  } text-primary font-bold`}>
-                    {String(service.id).padStart(2, '0')}
-                  </div>
-                </div>
-                <h3 className={`${
-                  service.special ? 'text-2xl' : 'text-xl'
-                } font-bold mb-4 text-primary`}>
-                  {service.title}
-                </h3>
-                <p className={`text-muted-foreground ${
-                  service.special ? 'mb-6 leading-relaxed' : 'text-sm mb-4'
-                }`}>
-                  {service.description}
-                </p>
-                <motion.a 
-                  href="#" 
-                  className={`text-primary hover:text-violet-light transition-colors duration-300 font-semibold ${
-                    service.special ? '' : 'text-sm'
-                  }`}
-                  whileHover={{ x: 5 }}
-                >
-                  Know More <span className="ml-2">→</span>
-                </motion.a>
+                <industry.icon className={`text-3xl mb-4 mx-auto ${industry.color} group-hover:text-primary transition-colors`} />
+                <h4 className="font-semibold text-foreground">{industry.name}</h4>
               </motion.div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Success Message and CTAs */}
+        <motion.div
+          className="text-center glassmorphism-strong p-12 rounded-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl font-bold mb-6 text-primary">
+            Success Where It Matters Most
+          </h3>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            We don't just deploy AI; we architect lasting advantages, helping you innovate faster and drive results where it matters most.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.button 
+              className="glassmorphism px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 hover-glow"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              data-testid="button-talk-expert"
+            >
+              Talk to an Expert
+            </motion.button>
+            <motion.button 
+              className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              data-testid="button-explore-work"
+            >
+              Explore How We Work
+            </motion.button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

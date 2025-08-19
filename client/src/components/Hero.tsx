@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { FaRocket, FaCogs } from "react-icons/fa";
+import { FaBrain, FaCogs, FaRocket } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center relative blob-bg pt-20">
+    <section id="home" className="min-h-screen flex items-center relative blob-bg pt-20 marble-bg">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -18,39 +18,55 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Empower Your Business with {" "}
-              <span className="">
+              <span className="text-gradient gold-accent">
                 AI, Innovation & Impact
               </span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-muted-foreground mb-8 leading-relaxed"
+              className="text-xl text-muted-foreground mb-4 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Unlock scalable growth with world-class AI, mobile solutions, and industry expertise built for tomorrow’s challenges.
+              Unlock scalable growth with world-class AI, mobile solutions, and industry expertise built for tomorrow's challenges.
+            </motion.p>
+            <motion.p 
+              className="text-lg text-primary font-semibold mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
               Your vision. Our technology. Shared success.
-
+            </motion.p>
+            <motion.p 
+              className="text-base text-muted-foreground mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              Neural Coder AI transforms ambition into reality. We deliver intelligent solutions—from AI-powered apps to full-stack development—that elevate your business, turbocharge productivity, and drive measurable outcomes. Our collaborative, customer-first approach makes us your trusted partner for digital transformation, wherever in the world you do business.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
             >
               <motion.button 
-                className="glassmorphism px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover-glow"
+                className="glassmorphism-strong px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 hover-glow"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                data-testid="button-consultation"
               >
-                Get in Touch
+                Request Free Consultation
               </motion.button>
               <motion.button 
-                className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+                className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                data-testid="button-portfolio"
               >
-                Explore More
+                See Our Portfolio
               </motion.button>
             </motion.div>
           </motion.div>
@@ -62,16 +78,16 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative w-full h-96 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-violet-light/20 rounded-3xl blur-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl blur-3xl" />
               <motion.div 
-                className="relative glassmorphism p-8 rounded-3xl hover-lift"
+                className="relative glassmorphism-strong p-8 rounded-3xl hover-lift"
                 whileHover={{ rotateY: 5 }}
               >
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
-                  <FaCogs className="text-6xl text-primary mb-4" />
+                  <FaBrain className="text-6xl text-primary mb-4" />
                 </motion.div>
                 <div className="grid grid-cols-3 gap-2">
                   {Array.from({ length: 9 }).map((_, i) => (
