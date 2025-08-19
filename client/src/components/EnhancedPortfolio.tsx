@@ -211,7 +211,7 @@ export default function EnhancedPortfolio() {
             transition={{ duration: 1.2 }}
             viewport={{ once: true }}
           >
-            Our <span className="text-gradient-high-contrast relative">
+            Our <span className="text-gradient-visible relative">
               Projects
               <motion.div
                 className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-cyan-400"

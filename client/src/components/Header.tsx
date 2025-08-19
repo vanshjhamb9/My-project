@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScroll } from "@/hooks/use-scroll";
+import LogoComponent from "./LogoComponent";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -34,12 +35,7 @@ export default function Header() {
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <motion.div 
-              className="text-2xl font-bold text-gradient"
-              whileHover={{ scale: 1.05 }}
-            >
-              Neural Coder AI
-            </motion.div>
+            <LogoComponent size="md" showText={true} animate={true} />
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">

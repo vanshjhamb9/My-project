@@ -72,13 +72,28 @@
   }
 
   .text-gradient {
-    @apply text-transparent bg-clip-text;
+    @apply text-white;
     background: linear-gradient(45deg, var(--gold), var(--platinum));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .text-gradient-high-contrast {
-    @apply text-transparent bg-clip-text;
-    background: linear-gradient(45deg, hsl(51, 100%, 65%), hsl(0, 0%, 95%));
+    color: hsl(51, 100%, 70%);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+
+  .text-gradient-visible {
+    color: hsl(51, 100%, 70%);
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .logo-text {
+    color: hsl(51, 100%, 70%);
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .gold-accent {

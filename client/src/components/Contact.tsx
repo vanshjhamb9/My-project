@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaPhone, FaEnvelope, FaPaperPlane, FaMapMarkerAlt } from "react-icons/fa";
+import LogoComponent from "./LogoComponent";
 
 const offices = [
   { country: "INDIA", location: "Ahmedabad, Gujarat" },
@@ -52,7 +53,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
-            Ready to <span className="text-gradient gold-accent">Collaborate?</span>
+            Ready to <span className="text-gradient-visible">Collaborate?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Let's build your next breakthrough together.
@@ -68,7 +69,10 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-primary">Quick Inquiry Form</h3>
+            <div className="flex items-center gap-3 mb-6">
+              <LogoComponent size="sm" showText={false} animate={true} />
+              <h3 className="text-2xl font-bold text-primary">Quick Inquiry Form</h3>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div
                 whileHover={{ scale: 1.02 }}

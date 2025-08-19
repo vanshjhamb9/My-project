@@ -18,7 +18,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Empower Your Business with {" "}
-              <span className="text-gradient-high-contrast">
+              <span className="text-gradient-visible">
                 AI, Innovation & Impact
               </span>
             </motion.h1>
@@ -72,7 +72,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            className="animate-float"
+            className="relative flex items-center justify-center animate-float"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -80,27 +80,35 @@ export default function Hero() {
             <div className="relative w-full h-96 flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl blur-3xl" />
               <motion.div 
-                className="relative glassmorphism-strong p-8 rounded-3xl hover-lift"
-                whileHover={{ rotateY: 5 }}
+                className="relative glassmorphism-strong p-12 rounded-3xl hover-lift"
+                whileHover={{ rotateY: 5, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                >
-                  <FaBrain className="text-6xl text-primary mb-4" />
-                </motion.div>
-                <div className="grid grid-cols-3 gap-2">
-                  {Array.from({ length: 9 }).map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className={`w-8 h-8 rounded ${
-                        i === 4 ? "bg-primary" : "glassmorphism"
-                      }`}
-                      whileHover={{ scale: 1.2, rotate: 180 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  ))}
-                </div>
+                <motion.img 
+                  src="/attached_assets/JejjbGC0_400x400_1755634634614.jpg" 
+                  alt="Neural Coder AI - Coding the Future"
+                  className="w-48 h-48 rounded-2xl shadow-2xl shadow-primary/30"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    rotateY: [0, 5, 0, -5, 0]
+                  }}
+                  transition={{ 
+                    duration: 6, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                />
+                <motion.div 
+                  className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 rounded-3xl"
+                  animate={{
+                    rotate: [0, 360]
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
               </motion.div>
             </div>
           </motion.div>

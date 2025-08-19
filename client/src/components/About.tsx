@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLightbulb, FaUsers, FaCogs, FaStar, FaBullseye, FaEye } from "react-icons/fa";
+import LogoComponent from "./LogoComponent";
 
 export default function About() {
   return (
@@ -50,9 +51,10 @@ export default function About() {
               className="glassmorphism-strong p-8 rounded-3xl text-center"
               whileHover={{ scale: 1.02 }}
             >
-              <h2 className="text-4xl font-bold mb-8">
-                <span className="text-gradient gold-accent">Neural Coder AI</span>
-              </h2>
+              <div className="flex flex-col items-center mb-8">
+                <LogoComponent size="lg" showText={false} animate={true} className="mb-4" />
+                <h2 className="text-4xl font-bold text-gradient-visible">Neural Coder AI</h2>
+              </div>
               <div className="space-y-6">
                 <motion.p 
                   className="text-lg text-primary font-semibold"
@@ -91,7 +93,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold mb-4">
-            Our <span className="text-gradient gold-accent">Global Partners</span>
+            Our <span className="text-gradient-visible">Global Partners</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
             Trusted by industry leaders worldwide

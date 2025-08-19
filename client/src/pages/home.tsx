@@ -7,6 +7,7 @@ import ClientLogos from "@/components/ClientLogos";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 
+
 export default function Home() {
   return (
     <Layout>

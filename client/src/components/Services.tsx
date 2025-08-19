@@ -107,7 +107,7 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="text-gradient gold-accent">Offerings</span>
+            Our <span className="text-gradient-visible">Offerings</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Neural Coder AI provides tailored AI and tech solutions that go beyond the ordinary. 
@@ -172,7 +172,7 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-bold text-center mb-12">
-            Industries <span className="text-gradient gold-accent">We Serve</span>
+            Industries <span className="text-gradient-visible">We Serve</span>
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {industries.map((industry, index) => (
