@@ -73,7 +73,12 @@
 
   .text-gradient {
     @apply text-transparent bg-clip-text;
-    background: linear-gradient(45deg, var(--gold), var(--silver));
+    background: linear-gradient(45deg, var(--gold), var(--platinum));
+  }
+
+  .text-gradient-high-contrast {
+    @apply text-transparent bg-clip-text;
+    background: linear-gradient(45deg, hsl(51, 100%, 65%), hsl(0, 0%, 95%));
   }
 
   .gold-accent {

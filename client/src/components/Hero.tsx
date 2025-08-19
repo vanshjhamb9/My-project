@@ -18,7 +18,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Empower Your Business with {" "}
-              <span className="text-gradient gold-accent">
+              <span className="text-gradient-high-contrast">
                 AI, Innovation & Impact
               </span>
             </motion.h1>

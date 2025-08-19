@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
+import EnhancedPortfolio from "@/components/EnhancedPortfolio";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import ClientLogos from "@/components/ClientLogos";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <Portfolio />
+      <EnhancedPortfolio />
       <Services />
       <About />
       <ClientLogos />
