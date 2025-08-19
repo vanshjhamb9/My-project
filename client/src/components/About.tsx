@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaLightbulb, FaUsers, FaCogs, FaStar, FaBullseye, FaEye } from "react-icons/fa";
 import LogoComponent from "./LogoComponent";
+import { AIBrainNetwork, CircuitBoard, HolographicInterface } from "./CustomIllustrations";
 
 export default function About() {
   return (

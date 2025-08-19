@@ -4,9 +4,9 @@ import { FaMobile, FaRobot, FaChartLine, FaCogs, FaRocket, FaTimes } from "react
 import { SiReact, SiPython, SiTensorflow, SiNodedotjs, SiMongodb, SiAmazon, SiDocker, SiKubernetes } from "react-icons/si";
 import { useInView } from "react-intersection-observer";
 import { 
-  AINetworkIllustration, 
-  CircuitBoardIllustration, 
-  DataFlowIllustration, 
+  AIBrainNetwork, 
+  CircuitBoard, 
+  DataFlow, 
   HolographicInterface, 
   AbstractWaves 
 } from "./CustomIllustrations";
@@ -16,7 +16,7 @@ const portfolioProjects = [
     id: 1,
     title: "AI-Powered Mobile Banking App",
     shortDescription: "Revolutionary fintech with AI-driven insights and fraud detection",
-    illustration: AINetworkIllustration,
+    illustration: AIBrainNetwork,
     category: "Mobile",
     techStack: [SiReact, SiNodedotjs, SiTensorflow, SiMongodb],
     fullDescription: "Revolutionary mobile banking application that leverages artificial intelligence to provide personalized financial insights, predictive analytics for spending patterns, and real-time fraud detection. Built with React Native for cross-platform compatibility and integrated with TensorFlow for machine learning capabilities.",
@@ -29,7 +29,7 @@ const portfolioProjects = [
     id: 2,
     title: "Enterprise AI Chatbot Platform",
     shortDescription: "Multi-language conversational AI automating customer support",
-    illustration: CircuitBoardIllustration,
+    illustration: CircuitBoard,
     category: "AI",
     techStack: [SiPython, SiTensorflow, SiNodedotjs, SiAmazon],
     fullDescription: "Comprehensive AI chatbot platform serving enterprise clients with multi-language support, sentiment analysis, and intelligent routing. Processes over 100,000 conversations daily with 95% accuracy rate.",
@@ -42,7 +42,7 @@ const portfolioProjects = [
     id: 3,
     title: "AI-First E-commerce Transformation",
     shortDescription: "Complete digital transformation with intelligent recommendations",
-    illustration: DataFlowIllustration,
+    illustration: DataFlow,
     category: "AI",
     techStack: [SiReact, SiPython, SiTensorflow, SiAmazon],
     fullDescription: "End-to-end digital transformation for a major retail chain, implementing AI-driven product recommendations, dynamic pricing, and predictive inventory management across 500+ stores.",

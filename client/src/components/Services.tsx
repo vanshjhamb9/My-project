@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FeatureCard, ProcessSteps } from "./CreativeAssets";
 import { 
   FaMobile, 
   FaBrain, 
@@ -190,6 +191,63 @@ export default function Services() {
                 <h4 className="font-semibold text-foreground">{industry.name}</h4>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Our Process */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-3xl font-bold text-center mb-12">
+            Our <span className="text-gradient-visible">Development Process</span>
+          </h3>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <ProcessSteps 
+                steps={[
+                  {
+                    title: "Discovery & Strategy",
+                    description: "We dive deep into your business needs, analyze requirements, and create a comprehensive strategy aligned with your goals.",
+                    icon: "🔍"
+                  },
+                  {
+                    title: "Design & Prototyping", 
+                    description: "Our team creates intuitive designs and interactive prototypes to visualize your solution before development begins.",
+                    icon: "🎨"
+                  },
+                  {
+                    title: "Development & Testing",
+                    description: "Using agile methodologies, we build your solution with rigorous testing at every stage to ensure quality and performance.",
+                    icon: "⚡"
+                  }
+                ]} 
+              />
+            </div>
+            <div>
+              <ProcessSteps 
+                steps={[
+                  {
+                    title: "Deployment & Launch",
+                    description: "We handle the complete deployment process, ensuring smooth launch with minimal downtime and maximum performance.",
+                    icon: "🚀"
+                  },
+                  {
+                    title: "Support & Optimization",
+                    description: "Post-launch, we provide ongoing support, monitoring, and optimization to ensure your solution continues to excel.",
+                    icon: "📈"
+                  },
+                  {
+                    title: "Scale & Evolve",
+                    description: "As your business grows, we help scale your solution and add new features to meet evolving requirements.",
+                    icon: "🌟"
+                  }
+                ]} 
+              />
+            </div>
           </div>
         </motion.div>
 
