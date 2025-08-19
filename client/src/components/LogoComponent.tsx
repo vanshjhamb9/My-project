@@ -31,9 +31,9 @@ export default function LogoComponent({
       whileHover={animate ? { scale: 1.05 } : {}}
     >
       <motion.img 
-        src="/attached_assets/JejjbGC0_400x400_1755634634614.jpg" 
+        src="https://i.ibb.co/FLT3WvM3/Jejjb-GC0-400x400.jpg" 
         alt="Neural Coder AI Logo" 
-        className={`${sizes[size]} rounded-lg shadow-lg`}
+        className={`${sizes[size]} rounded-lg shadow-lg`} 
         animate={animate ? {
           y: [0, -2, 0],
           rotate: [0, 1, 0, -1, 0]
