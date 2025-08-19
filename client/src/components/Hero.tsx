@@ -17,9 +17,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Digitizing the world with{" "}
-              <span className="text-gradient animate-gradient-shift">
-                innovation
+              Empower Your Business with {" "}
+              <span className="">
+                AI, Innovation & Impact
               </span>
             </motion.h1>
             <motion.p 
@@ -28,7 +28,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              We help you achieve your business objectives with the right technology, strategy and people.
+              Unlock scalable growth with world-class AI, mobile solutions, and industry expertise built for tomorrow’s challenges.
+              Your vision. Our technology. Shared success.
+
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
