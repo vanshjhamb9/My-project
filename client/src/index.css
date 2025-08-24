@@ -90,12 +90,9 @@
   }
 
   .text-gradient-visible {
-    background: linear-gradient(135deg, hsl(185, 84%, 65%) 0%, hsl(140, 60%, 60%) 50%, hsl(210, 100%, 65%) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(91, 206, 213, 0.3);
     font-weight: 700;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   }
 
   .logo-text {
@@ -392,21 +389,21 @@
 }
 
 .animate-galaxy-pulse {
-  animation: galaxy-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(91, 206, 213, 0.2);
+  border: 1px solid rgba(91, 206, 213, 0.3);
 }
 
 .animate-aurora-wave {
-  background: linear-gradient(45deg, var(--sea-blue), var(--aurora-green), var(--galaxy-blue));
-  background-size: 200% 200%;
-  animation: aurora-wave 4s ease-in-out infinite;
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(91, 206, 213, 0.4);
 }
 
 .animate-neural-network {
-  animation: neural-network 6s ease-in-out infinite;
+  color: var(--primary);
 }
 
 .animate-data-flow {
-  animation: data-flow 2s ease-in-out infinite;
+  color: var(--secondary);
 }
 
 /* Custom Scrollbar */

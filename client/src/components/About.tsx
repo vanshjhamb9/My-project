@@ -4,6 +4,7 @@ import LogoComponent from "./LogoComponent";
 import { AIBrainNetwork, CircuitBoard, HolographicInterface } from "./CustomIllustrations";
 import { useRef } from "react";
 import { TechStackShowcase } from "./InteractiveAssets";
+import { AnimatedCountryFlags } from "./CountryFlags";
 
 export default function About() {
   const aboutRef = useRef<HTMLElement>(null);
@@ -115,34 +116,13 @@ export default function About() {
             className="text-4xl font-bold mb-4"
             whileHover={{ scale: 1.02 }}
           >
-            <span className="text-gradient-visible animate-aurora-wave">Global Reach</span>
+            <span className="text-primary">Global Reach</span>
           </motion.h2>
           <p className="text-xl text-muted-foreground mb-12">
             <span className="text-primary font-semibold">Empowering industries, one innovation at a time</span>
           </p>
           <div className="glassmorphism-strong p-12 rounded-3xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {[
-                { name: 'USA', emoji: '🇺🇸', desc: 'Innovation Hub' },
-                { name: 'India', emoji: '🇮🇳', desc: 'Development Center' },
-                { name: 'UAE', emoji: '🇦🇪', desc: 'Middle East Gateway' },
-                { name: 'Global', emoji: '🌍', desc: 'Worldwide Reach' }
-              ].map((location, index) => (
-                <motion.div
-                  key={location.name}
-                  className="glassmorphism p-6 rounded-xl text-center hover-lift animate-galaxy-pulse"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.08, rotateY: 5 }}
-                >
-                  <div className="text-3xl mb-2 animate-neural-network">{location.emoji}</div>
-                  <h3 className="text-lg font-semibold text-primary">{location.name}</h3>
-                  <p className="text-sm text-muted-foreground">{location.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+            <AnimatedCountryFlags />
           </div>
         </motion.div>
 
