@@ -17,34 +17,77 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Empower Your Business with {" "}
+              GREAT TECH DOESN'T JUST {" "}
               <span className="text-gradient-visible">
-                AI, Innovation & Impact
+                SOLVE PROBLEMS
               </span>
+              <br />
+              <motion.span 
+                className="text-gradient-visible"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+              >
+                IT UNDERSTANDS THEM,
+              </motion.span>
+              <br />
+              <motion.span 
+                className="text-gradient-visible animate-aurora-wave"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2, duration: 1 }}
+              >
+                ADAPTS, AND EVOLVES WITH YOU.
+              </motion.span>
             </motion.h1>
-            <motion.p 
-              className="text-xl text-muted-foreground mb-4 leading-relaxed"
+            <motion.div 
+              className="glassmorphism-strong p-6 rounded-2xl mb-6 animate-galaxy-pulse"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Unlock scalable growth with world-class AI, mobile solutions, and industry expertise built for tomorrow's challenges.
-            </motion.p>
-            <motion.p 
-              className="text-lg text-primary font-semibold mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              Your vision. Our technology. Shared success.
-            </motion.p>
-            <motion.p 
-              className="text-base text-muted-foreground mb-8 leading-relaxed"
+              <motion.p 
+                className="text-xl text-primary font-bold mb-2"
+                whileHover={{ scale: 1.05 }}
+              >
+                @ NEURAL CODER AI
+              </motion.p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We are more than coders — we are your AI partners.
+                <br />
+                <span className="text-primary font-semibold">Together we create today and evolve for tomorrow.</span>
+              </p>
+            </motion.div>
+            <motion.div 
+              className="grid md:grid-cols-2 gap-4 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Neural Coder AI transforms ambition into reality. We deliver intelligent solutions—from AI-powered apps to full-stack development—that elevate your business, turbocharge productivity, and drive measurable outcomes. Our collaborative, customer-first approach makes us your trusted partner for digital transformation, wherever in the world you do business.
+              <motion.div 
+                className="glassmorphism p-4 rounded-xl hover-lift"
+                whileHover={{ scale: 1.02, rotateY: 2 }}
+              >
+                <p className="text-sm text-muted-foreground">
+                  We build AI-powered products that think, learn, and adapt with you.
+                </p>
+              </motion.div>
+              <motion.div 
+                className="glassmorphism p-4 rounded-xl hover-lift"
+                whileHover={{ scale: 1.02, rotateY: -2 }}
+              >
+                <p className="text-sm text-muted-foreground">
+                  From smart apps to predictive platforms, we engineer what's next.
+                </p>
+              </motion.div>
+            </motion.div>
+            <motion.p 
+              className="text-base text-primary font-semibold mb-8 animate-neural-network"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              Idea to impact → with clarity and confidence
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
@@ -53,20 +96,20 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.8 }}
             >
               <motion.button 
-                className="glassmorphism-strong px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 hover-glow"
-                whileHover={{ scale: 1.05 }}
+                className="glassmorphism-strong px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 hover-glow animate-galaxy-pulse"
+                whileHover={{ scale: 1.05, rotateZ: 2 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-consultation"
               >
-                Request Free Consultation
+                🚀 Start Your AI Journey
               </motion.button>
               <motion.button 
-                className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 animate-data-flow"
+                whileHover={{ scale: 1.05, rotateZ: -2 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-portfolio"
               >
-                See Our Portfolio
+                🎯 Explore Our Work
               </motion.button>
             </motion.div>
           </motion.div>
@@ -78,19 +121,59 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative w-full h-96 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl blur-3xl" />
+              {/* Floating Neural Network Elements */}
               <motion.div 
-                className="relative glassmorphism-strong p-12 rounded-3xl hover-lift"
-                whileHover={{ rotateY: 5, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full animate-neural-network"
+                animate={{
+                  x: [0, 20, -10, 0],
+                  y: [0, -20, 10, 0],
+                  scale: [1, 1.5, 0.8, 1]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div 
+                className="absolute bottom-10 right-10 w-3 h-3 bg-secondary rounded-full animate-neural-network"
+                animate={{
+                  x: [0, -15, 25, 0],
+                  y: [0, 15, -20, 0],
+                  scale: [1, 0.5, 2, 1]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div 
+                className="absolute top-1/2 left-1/4 w-2 h-2 bg-accent rounded-full animate-neural-network"
+                animate={{
+                  rotate: [0, 180, 360],
+                  scale: [1, 2, 0.5, 1]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity
+                }}
+              />
+              
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/15 rounded-3xl blur-3xl animate-aurora-wave" />
+              <motion.div 
+                className="relative glassmorphism-strong p-12 rounded-3xl hover-lift animate-galaxy-pulse"
+                whileHover={{ rotateY: 10, scale: 1.05, rotateX: 5 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <motion.img 
                   src="/attached_assets/JejjbGC0_400x400_1755634634614.jpg" 
                   alt="Neural Coder AI - Coding the Future"
                   className="w-48 h-48 rounded-2xl shadow-2xl shadow-primary/30"
                   animate={{ 
-                    y: [0, -10, 0],
-                    rotateY: [0, 5, 0, -5, 0]
+                    y: [0, -15, 0],
+                    rotateY: [0, 10, 0, -10, 0],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ 
                     duration: 6, 
@@ -98,17 +181,76 @@ export default function Hero() {
                     ease: "easeInOut" 
                   }}
                 />
+                
+                {/* Data Flow Lines */}
                 <motion.div 
-                  className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 rounded-3xl"
+                  className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent animate-data-flow"
                   animate={{
-                    rotate: [0, 360]
+                    scaleX: [0, 1, 0],
+                    opacity: [0, 1, 0]
                   }}
                   transition={{
-                    duration: 8,
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 1
+                  }}
+                />
+                <motion.div 
+                  className="absolute bottom-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent animate-data-flow"
+                  animate={{
+                    scaleX: [0, 1, 0],
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    repeatDelay: 0.5,
+                    delay: 1
+                  }}
+                />
+                
+                <motion.div 
+                  className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/15 to-accent/20 rounded-3xl"
+                  animate={{
+                    rotate: [0, 360],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 10,
                     repeat: Infinity,
                     ease: "linear"
                   }}
                 />
+              </motion.div>
+              
+              {/* Surprise Elements */}
+              <motion.div
+                className="absolute -top-5 left-1/2 transform -translate-x-1/2 text-2xl"
+                animate={{
+                  y: [0, -20, 0],
+                  rotate: [0, 15, -15, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: 2
+                }}
+              >
+                🧠
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-5 right-1/4 text-xl"
+                animate={{
+                  rotate: [0, 360],
+                  scale: [1, 1.3, 1]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 1
+                }}
+              >
+                ⚡
               </motion.div>
             </div>
           </motion.div>

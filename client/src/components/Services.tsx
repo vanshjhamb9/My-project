@@ -9,6 +9,7 @@ import {
   FaEye, 
   FaLink, 
   FaCubes,
+  FaCogs,
   FaGamepad,
   FaShoppingCart,
   FaHome,
@@ -20,79 +21,79 @@ import {
 const services = [
   {
     id: 1,
-    title: "AI-Powered Mobile App Development",
-    description: "Personalized, scalable, and intelligent apps built for impact with cutting-edge AI integration.",
-    icon: FaMobile,
+    title: "AI Solutions & Integration",
+    description: "Transform your business with intelligent AI systems that automate, optimize, and scale.",
+    icon: FaBrain,
     special: true,
     colSpan: "lg:col-span-2"
   },
   {
     id: 2,
-    title: "Custom CRM and Web Application Solutions",
-    description: "Tailored business solutions that streamline operations and enhance productivity.",
-    icon: FaDatabase,
+    title: "AI-Powered Mobile Apps",
+    description: "Smart mobile applications that learn, adapt, and deliver personalized experiences.",
+    icon: FaMobile,
     special: false,
     colSpan: ""
   },
   {
     id: 3,
-    title: "AI Integration for Automation & Insights",
-    description: "Intelligent systems that automate processes and provide actionable business intelligence.",
-    icon: FaBrain,
+    title: "Full-Stack Web Apps",
+    description: "Complete web solutions built for performance, scalability, and user engagement.",
+    icon: FaDatabase,
     special: false,
     colSpan: ""
   },
   {
     id: 4,
-    title: "IoT Solutions for Connected Enterprises",
-    description: "Smart IoT ecosystems that connect devices and transform business operations.",
-    icon: FaWifi,
-    special: false,
-    colSpan: ""
-  },
-  {
-    id: 5,
-    title: "Machine Learning & Predictive Analytics",
-    description: "Data-driven insights and predictions to optimize decision-making processes.",
+    title: "Custom SDKs for All Users",
+    description: "Developer-friendly SDKs that make integration seamless and powerful.",
     icon: FaCubes,
     special: false,
     colSpan: ""
   },
   {
+    id: 5,
+    title: "Web3 & Blockchain Development",
+    description: "Next-generation decentralized applications with blockchain security.",
+    icon: FaLink,
+    special: false,
+    colSpan: ""
+  },
+  {
     id: 6,
-    title: "Computer Vision Implementation",
-    description: "Advanced visual recognition and processing capabilities for various applications.",
+    title: "Computer Vision & ML",
+    description: "Advanced visual recognition and machine learning capabilities.",
     icon: FaEye,
     special: false,
     colSpan: ""
   },
   {
     id: 7,
-    title: "Robotics Automation",
-    description: "Intelligent robotic solutions that enhance efficiency and precision in operations.",
+    title: "Robotics & Automation",
+    description: "Intelligent robotic solutions for enhanced efficiency and precision.",
     icon: FaRobot,
     special: false,
     colSpan: ""
   },
   {
     id: 8,
-    title: "Blockchain for Secure Transactions",
-    description: "Decentralized solutions ensuring security, transparency, and trust in digital transactions.",
-    icon: FaLink,
+    title: "DevOps & Cyber Security",
+    description: "Secure, scalable infrastructure with robust DevOps practices.",
+    icon: FaCogs,
     special: false,
     colSpan: ""
   }
 ];
 
 const industries = [
-  { name: "eCommerce", icon: FaShoppingCart, color: "text-blue-400" },
-  { name: "Real Estate", icon: FaHome, color: "text-green-400" },
-  { name: "Retail", icon: FaShoppingCart, color: "text-purple-400" },
-  { name: "EdTech", icon: FaGraduationCap, color: "text-yellow-400" },
-  { name: "Healthcare", icon: FaHeart, color: "text-red-400" },
-  { name: "Gaming", icon: FaGamepad, color: "text-cyan-400" },
-  { name: "Agriculture", icon: FaSeedling, color: "text-green-500" },
-  { name: "Supply Chain", icon: FaCubes, color: "text-orange-400" }
+  { name: "HealthTech", icon: FaHeart, color: "text-red-400" },
+  { name: "Fintech & BFSI", icon: FaShoppingCart, color: "text-primary" },
+  { name: "E-Commerce & D2C", icon: FaShoppingCart, color: "text-secondary" },
+  { name: "Real Estate", icon: FaHome, color: "text-accent" },
+  { name: "EdTech", icon: FaGraduationCap, color: "text-purple-400" },
+  { name: "Travel & Leisure", icon: FaGamepad, color: "text-cyan-400" },
+  { name: "Manufacturing", icon: FaCubes, color: "text-orange-400" },
+  { name: "AgriTech", icon: FaSeedling, color: "text-green-500" }
 ];
 
 export default function Services() {
@@ -107,13 +108,22 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="text-gradient-visible">Offerings</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Neural Coder AI provides tailored AI and tech solutions that go beyond the ordinary. 
-            Our services unlock new levels of efficiency, insight, and scale for your business.
-          </p>
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            whileHover={{ scale: 1.02 }}
+          >
+            Our <span className="text-gradient-visible animate-aurora-wave">Services</span>
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            whileHover={{ y: -2 }}
+          >
+            <span className="text-primary font-semibold">Automate. Optimize. Scale.</span>
+            <br />
+            Full-Stack Innovation in AI, Mobile, Web & Developer Tools
+            <br />
+            <em className="text-sm text-accent">Innovation that transforms ideas into impact.</em>
+          </motion.p>
         </motion.div>
 
         {/* Services Grid */}

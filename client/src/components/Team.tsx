@@ -3,42 +3,32 @@ import { TeamAvatar, StatsDisplay } from "./CreativeAssets";
 
 const teamMembers = [
   {
-    name: "Alex Chen",
-    role: "AI Research Lead",
-    specialty: "Machine Learning & Neural Networks"
+    name: "Isaac John",
+    role: "Founder & CEO",
+    specialty: "Visionary Leader & AI Strategy"
   },
   {
-    name: "Sarah Johnson",
-    role: "Mobile Development Director", 
-    specialty: "React Native & iOS/Android"
+    name: "Nicholas R. Mallon",
+    role: "Chief Technology Officer", 
+    specialty: "Technical Architecture & Innovation"
   },
   {
-    name: "David Kumar",
-    role: "Full-Stack Architect",
-    specialty: "Cloud Infrastructure & APIs"
+    name: "George Wells",
+    role: "Chief Financial Officer",
+    specialty: "Financial Strategy & Operations"
   },
   {
-    name: "Maria Rodriguez",
-    role: "UX/UI Design Lead",
-    specialty: "Product Design & User Experience"
-  },
-  {
-    name: "James Wilson",
-    role: "DevOps Engineer",
-    specialty: "CI/CD & System Architecture"
-  },
-  {
-    name: "Lisa Zhang",
-    role: "Data Science Manager",
-    specialty: "Analytics & Business Intelligence"
+    name: "Fannie Schoen",
+    role: "Chief Marketing Officer",
+    specialty: "Brand Strategy & Market Growth"
   }
 ];
 
 const companyStats = [
-  { label: "Projects Delivered", value: "200+", icon: "🚀" },
-  { label: "Happy Clients", value: "150+", icon: "😊" },
-  { label: "Years Experience", value: "8+", icon: "⭐" },
-  { label: "Team Members", value: "25+", icon: "👥" }
+  { label: "Projects Delivered", value: "500+", icon: "🚀" },
+  { label: "Countries Reached", value: "10", icon: "🌍" },
+  { label: "AI Solutions", value: "100+", icon: "🧠" },
+  { label: "Expert Team", value: "25+", icon: "👥" }
 ];
 
 export default function Team() {
@@ -53,13 +43,19 @@ export default function Team() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet Our <span className="text-gradient-visible">Expert Team</span>
-          </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Our diverse team of AI specialists, developers, and designers brings years of experience 
-            in building cutting-edge solutions that drive real business results.
-          </p>
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            whileHover={{ scale: 1.02 }}
+          >
+            Meet Our <span className="text-gradient-visible animate-aurora-wave">Team</span>
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            whileHover={{ y: -2 }}
+          >
+            <span className="text-primary font-semibold">Meet our team — seasoned professionals with deep expertise and rich experience,</span>
+            <br />ready to bring your vision to life.
+          </motion.p>
         </motion.div>
 
         {/* Company Stats */}
@@ -107,14 +103,23 @@ export default function Team() {
             >
               <span className="text-black font-bold text-2xl">NC</span>
             </motion.div>
-            <h3 className="text-2xl font-bold text-white mb-6">
-              "Innovation Through Collaboration"
-            </h3>
-            <p className="text-lg text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
-              At Neural Coder AI, we believe the best solutions emerge when diverse minds collaborate. 
-              Our team combines technical expertise with creative thinking to deliver AI solutions 
-              that not just meet today's challenges but anticipate tomorrow's opportunities.
-            </p>
+            <motion.h3 
+              className="text-2xl font-bold text-primary mb-6 animate-galaxy-pulse"
+              whileHover={{ scale: 1.05 }}
+            >
+              "AI isn't the enemy — it's your advantage. Own it or fall behind."
+            </motion.h3>
+            <p className="text-sm text-muted-foreground mb-2">- Isaac John, 2025</p>
+            <motion.p 
+              className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
+              whileHover={{ scale: 1.02 }}
+            >
+              We're not just here to build. We're here to support, to solve, and to stand by you when it matters most.
+              <br /><br />
+              <span className="text-primary font-semibold">Your success is our mission.</span>
+              <br />
+              We're not just a vendor — we're your growth partner.
+            </motion.p>
             <div className="flex justify-center gap-4">
               <motion.button 
                 className="glassmorphism px-8 py-3 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300"

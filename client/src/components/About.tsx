@@ -17,12 +17,14 @@ export default function About() {
           >
             <motion.div className="glassmorphism-strong p-8 rounded-2xl hover-lift mb-8">
               <FaBullseye className="text-4xl text-primary mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-primary mb-4 animate-aurora-wave">Our Mission</h3>
               <h2 className="text-3xl font-bold mb-6">
-                Redefine business performance through intelligent technology.
+                Smart choice: Partner with experts who build AI that learns, adapts, and safeguards your future.
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Empowering organizations to leap ahead through actionable AI, seamless digital experiences, and collaborative innovation.
+                <strong className="text-primary">Expertise:</strong> Powered by top-tier talent, we engineer intelligent systems built to last.
+                <br /><br />
+                <strong className="text-primary">Security:</strong> Your data's safety is our priority — trusted, robust, and built with integrity.
               </p>
             </motion.div>
 
@@ -34,9 +36,15 @@ export default function About() {
               viewport={{ once: true }}
             >
               <FaEye className="text-4xl text-primary mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Be the global benchmark for transformative, AI-driven solutions, delivering measurable impact across industries and empowering businesses everywhere.
+              <h3 className="text-2xl font-bold text-primary mb-4 animate-galaxy-pulse">Our Vision</h3>
+              <motion.p 
+                className="text-lg text-primary font-bold italic animate-neural-network"
+                whileHover={{ scale: 1.05 }}
+              >
+                "AI isn't the enemy — it's your advantage. Own it or fall behind."
+              </motion.p>
+              <p className="text-sm text-muted-foreground mt-2">
+                - Isaac John, 2025
               </p>
             </motion.div>
           </motion.div>
@@ -58,22 +66,22 @@ export default function About() {
               </div>
               <div className="space-y-6">
                 <motion.p 
-                  className="text-lg text-primary font-semibold"
+                  className="text-lg text-primary font-semibold animate-data-flow"
                   whileHover={{ scale: 1.05 }}
                 >
-                  "Success begins where intelligence meets inspiration."
+                  🌏 Rooted in India, Reaching the World
                 </motion.p>
                 <motion.p 
-                  className="text-lg text-primary font-semibold"
+                  className="text-lg font-bold text-gradient-visible"
                   whileHover={{ scale: 1.05 }}
                 >
-                  "Building businesses, not just software."
+                  500+ Projects to 10 Countries
                 </motion.p>
                 <motion.p 
-                  className="text-lg text-primary font-semibold"
+                  className="text-base text-muted-foreground"
                   whileHover={{ scale: 1.05 }}
                 >
-                  "Where your goals drive our innovation."
+                  Innovation that transforms ideas into impact.
                 </motion.p>
                 <div className="mt-8 pt-8 border-t border-primary/20">
                   <p className="text-xl font-bold text-foreground">
@@ -93,28 +101,35 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold mb-4">
-            Our <span className="text-gradient-visible">Global Partners</span>
-          </h2>
+          <motion.h2 
+            className="text-4xl font-bold mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
+            <span className="text-gradient-visible animate-aurora-wave">Global Reach</span>
+          </motion.h2>
           <p className="text-xl text-muted-foreground mb-12">
-            Trusted by industry leaders worldwide
+            <span className="text-primary font-semibold">Empowering industries, one innovation at a time</span>
           </p>
           <div className="glassmorphism-strong p-12 rounded-3xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {['USA', 'UK', 'UAE', 'India'].map((location, index) => (
+              {[
+                { name: 'USA', emoji: '🇺🇸', desc: 'Innovation Hub' },
+                { name: 'India', emoji: '🇮🇳', desc: 'Development Center' },
+                { name: 'UAE', emoji: '🇦🇪', desc: 'Middle East Gateway' },
+                { name: 'Global', emoji: '🌍', desc: 'Worldwide Reach' }
+              ].map((location, index) => (
                 <motion.div
-                  key={location}
-                  className="glassmorphism p-6 rounded-xl text-center hover-lift"
+                  key={location.name}
+                  className="glassmorphism p-6 rounded-xl text-center hover-lift animate-galaxy-pulse"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, rotateY: 5 }}
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/50 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-xl font-bold text-black">{location.charAt(0)}</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-primary">{location}</h3>
+                  <div className="text-3xl mb-2 animate-neural-network">{location.emoji}</div>
+                  <h3 className="text-lg font-semibold text-primary">{location.name}</h3>
+                  <p className="text-sm text-muted-foreground">{location.desc}</p>
                 </motion.div>
               ))}
             </div>
