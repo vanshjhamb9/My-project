@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
+import { WhyChooseUsSection, StatsCounterSection, ProcessTimelineSection, SuccessStoriesSection } from "@/components/ScrollRevealSections";
 import EnhancedPortfolio from "@/components/EnhancedPortfolio";
 import Services from "@/components/Services";
 import About from "@/components/About";
@@ -13,8 +14,12 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <EnhancedPortfolio />
+      <StatsCounterSection />
+      <WhyChooseUsSection />
       <Services />
+      <ProcessTimelineSection />
+      <SuccessStoriesSection />
+      <EnhancedPortfolio />
       <About />
       <ClientLogos />
       <Testimonials />

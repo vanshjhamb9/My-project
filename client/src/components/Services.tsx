@@ -1,5 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FeatureCard, ProcessSteps } from "./CreativeAssets";
+import { useRef } from "react";
+import { TechConstellation, DataFlowVisualization } from "./ScrollAnimations";
+import { InteractiveServiceGrid } from "./InteractiveAssets";
 import { 
   FaMobile, 
   FaBrain, 
@@ -97,9 +100,24 @@ const industries = [
 ];
 
 export default function Services() {
+  const servicesRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: servicesRef,
+    offset: ["start end", "end start"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+
   return (
-    <section id="services" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section ref={servicesRef} id="services" className="py-20 relative overflow-hidden">
+      {/* Background animations */}
+      <motion.div style={{ y: backgroundY, opacity }} className="absolute inset-0">
+        <TechConstellation />
+        <DataFlowVisualization />
+      </motion.div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div 
           className="text-center mb-16"
@@ -127,7 +145,10 @@ export default function Services() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="mb-16">
+          <InteractiveServiceGrid />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" style={{ display: 'none' }}>
           {services.map((service, index) => (
             <motion.div
               key={service.id}

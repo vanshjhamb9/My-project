@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import FloatingCTA from "./FloatingCTA";
+import { FloatingCTA } from "./InteractiveAssets";
 import ScrollProgress from "./ScrollProgress";
 
 interface LayoutProps {

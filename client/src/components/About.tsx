@@ -1,11 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FaLightbulb, FaUsers, FaCogs, FaStar, FaBullseye, FaEye } from "react-icons/fa";
 import LogoComponent from "./LogoComponent";
 import { AIBrainNetwork, CircuitBoard, HolographicInterface } from "./CustomIllustrations";
+import { useRef } from "react";
+import { TechStackShowcase } from "./InteractiveAssets";
 
 export default function About() {
+  const aboutRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: aboutRef,
+    offset: ["start end", "end start"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
   return (
-    <section id="about" className="py-20 relative">
+    <section ref={aboutRef} id="about" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Mission and Vision Section */}
         <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
@@ -136,6 +146,9 @@ export default function About() {
           </div>
         </motion.div>
 
+        {/* Tech Stack Section */}
+        <TechStackShowcase />
+
         {/* CTA Section */}
         <motion.div
           className="text-center"
@@ -146,20 +159,20 @@ export default function About() {
         >
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button 
-              className="glassmorphism-strong px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 hover-glow"
-              whileHover={{ scale: 1.05 }}
+              className="glassmorphism-strong px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 hover-glow animate-galaxy-pulse"
+              whileHover={{ scale: 1.05, rotateZ: 2 }}
               whileTap={{ scale: 0.95 }}
               data-testid="button-meet-team"
             >
-              Meet Our Team
+              🚀 Meet Our Team
             </motion.button>
             <motion.button 
-              className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
+              className="border border-primary px-8 py-4 rounded-full text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 animate-data-flow"
+              whileHover={{ scale: 1.05, rotateZ: -2 }}
               whileTap={{ scale: 0.95 }}
               data-testid="button-collaborate"
             >
-              Contact Us to Collaborate
+              💡 Start Your Project
             </motion.button>
           </div>
         </motion.div>

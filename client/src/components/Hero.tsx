@@ -1,10 +1,28 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FaBrain, FaCogs, FaRocket } from "react-icons/fa";
+import { useRef } from "react";
+import { FloatingNeuralNetwork, ParticleSystem } from "./ScrollAnimations";
 
 export default function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
-    <section id="home" className="min-h-screen flex items-center relative blob-bg pt-20 marble-bg">
-      <div className="container mx-auto px-6">
+    <section ref={heroRef} id="home" className="min-h-screen flex items-center relative blob-bg pt-20 marble-bg overflow-hidden">
+      {/* Scroll-based background animations */}
+      <FloatingNeuralNetwork />
+      <ParticleSystem />
+      
+      <motion.div 
+        style={{ y, opacity }} 
+        className="container mx-auto px-6 relative z-10"
+      >
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -255,7 +273,7 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
