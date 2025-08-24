@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope, FaInstagram, FaFacebook } from "react-icons/fa";
 import LogoComponent from "./LogoComponent";
 
 export default function Footer() {
@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <motion.a
-                href="#"
+                href="https://x.com/NeuralcoderAi"
                 className="w-10 h-10 glassmorphism rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1, y: -2 }}
                 data-testid="link-twitter"
@@ -24,7 +24,7 @@ export default function Footer() {
                 <FaTwitter />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://in.linkedin.com/company/neural-coder-ai"
                 className="w-10 h-10 glassmorphism rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1, y: -2 }}
                 data-testid="link-linkedin"
@@ -32,20 +32,20 @@ export default function Footer() {
                 <FaLinkedin />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.instagram.com/neuralcoder.ai/?utm_source=qr&igsh=ZHJ2dW9qOTk0OGlt"
                 className="w-10 h-10 glassmorphism rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1, y: -2 }}
-                data-testid="link-github"
+                data-testid="link-insta"
               >
-                <FaGithub />
+                <FaInstagram />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.facebook.com/p/Neural-Coder-Ai-61558052496811/"
                 className="w-10 h-10 glassmorphism rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1, y: -2 }}
                 data-testid="link-email"
               >
-                <FaEnvelope />
+                <FaFacebook />
               </motion.a>
             </div>
           </div>

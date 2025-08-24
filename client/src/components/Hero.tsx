@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FaBrain, FaCogs, FaRocket } from "react-icons/fa";
 import { useRef } from "react";
 import { FloatingNeuralNetwork, ParticleSystem } from "./ScrollAnimations";
+import image1 from "../../../attached_assets/1.svg";
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -185,7 +186,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.img 
-                  src="/attached_assets/JejjbGC0_400x400_1755634634614.jpg" 
+                  src="https://i.ibb.co/kVgCVqjZ/Untitled-design-1-removebg-previe.png" 
                   alt="Neural Coder AI - Coding the Future"
                   className="w-48 h-48 rounded-2xl shadow-2xl shadow-primary/30"
                   animate={{ 
